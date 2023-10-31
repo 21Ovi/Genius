@@ -2,6 +2,8 @@ import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 import Replicate from "replicate";
 
+import { checkApiLimit, increaseApiLimit } from "@/lib/api-limit";
+
 const replicate = new Replicate({
   auth: process.env.REPLICATE_API_TOKEN!,
 });
@@ -20,6 +22,12 @@ export const POST = async (req: Request) => {
       return new NextResponse("Prompts are required", { status: 400 });
     }
 
+    const freeTrail = await checkApiLimit();
+
+    if (!freeTrail) {
+      return new NextResponse("Free trail has expired.", { status: 403 });
+    }
+
     const response = await replicate.run(
       "riffusion/riffusion:8cf61ea6c56afd61d8f5b9ffd14d7c216c0a93844ce2d82ac1c9ecc9c7f24e05",
       {
@@ -28,6 +36,8 @@ export const POST = async (req: Request) => {
         },
       }
     );
+
+    await increaseApiLimit();
 
     return NextResponse.json(response);
   } catch (error) {
