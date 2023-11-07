@@ -2,7 +2,6 @@ import { auth, currentUser } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 
 import prismadb from "@/lib/prismadb";
-
 import { stripe } from "@/lib/stripe";
 import { absoluteUrl } from "@/lib/utils";
 
@@ -45,9 +44,9 @@ export async function GET() {
             currency: "INR",
             product_data: {
               name: "Genius Pro",
-              description: "Unlimited AI Generation",
+              description: "Unlimited AI Generations",
             },
-            unit_amount: 20000,
+            unit_amount: 2000,
             recurring: {
               interval: "month",
             },
@@ -62,7 +61,7 @@ export async function GET() {
 
     return new NextResponse(JSON.stringify({ url: stripeSession.url }));
   } catch (error) {
-    console.log("[STRIPE_ERROR", error);
+    console.log("[STRIPE_ERROR]", error);
     return new NextResponse("Internal Error", { status: 500 });
   }
 }
