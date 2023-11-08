@@ -25,6 +25,7 @@ import { Badge } from "./badge";
 import { Card } from "./card";
 import { cn } from "@/lib/utils";
 import { Button } from "./button";
+import toast from "react-hot-toast";
 
 const tools = [
   {
@@ -70,6 +71,8 @@ export const ProModal = () => {
 
       window.location.href = response.data.url;
     } catch (error) {
+      toast.error("Something went wrong");
+
       console.log(error, "STRIPE_CLIENT_ERROR");
     } finally {
       setLoading(false);
@@ -107,6 +110,7 @@ export const ProModal = () => {
         </DialogHeader>
         <DialogFooter>
           <Button
+            disabled={loading}
             onClick={onSubscribe}
             size="lg"
             variant="premium"
