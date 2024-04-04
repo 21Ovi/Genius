@@ -1,37 +1,25 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Genius it is an AI SaaS Platform
+Overview
 
-## Getting Started
+This AI SaaS Platform integrates five advanced AI tools into a user-centric application, leveraging the power of Next.js 13 App Router for optimal client-side routing and efficiency. Designed for both newcomers and experienced developers, this project showcases the implementation of a seamless Stripe subscription system, robust authentication via Clerk, and a host of other cutting-edge technologies.
+Key Features
 
-First, run the development server:
+    Clerk Authentication: Secure and scalable user authentication system.
+    Stripe Integration: Smooth and secure subscription management for users.
+    Crisp for Customer Support: Real-time customer support integration to handle queries and issues.
+    Prisma: Next-generation ORM for robust database management.
+    SHDCN-UI: A modern UI library for building intuitive and responsive interfaces.
+    OpenAI APIs: Integration of various OpenAI APIs for AI-driven functionalities, including conversation AI, code generation, and more.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Technologies Used
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+    Next.js 13 App Router
+    React & Tailwind CSS for frontend
+    Prisma & MySQL for the database
+    Clerk for authentication
+    Stripe for billing and subscriptions
+    Crisp for customer support
+    SHDCN-UI for UI components
+    OpenAI APIs for AI functionalities
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# AI-SaaS-Next-App
+This platform embodies a comprehensive exploration into the development of an AI-driven SaaS application, demonstrating best practices and the utilization of modern web development technologies.
